@@ -3,3 +3,6 @@
 // Follow exercises.md step by step.
 
 console.log("Hello, Git!");
+console.log("Hello, PlokJok!");
+
+//Committed from github

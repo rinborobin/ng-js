@@ -1,15 +1,16 @@
 NOTE: to remove git: use `Remove-Item -Recurse -Force .git`
 How to change repository when cloning from someone else?
--	git remote -v                       (you will see other repository)
--	git remote remove origin 
--	git remote -v                       (you should see nothing)
--	git remote add origin <URL>
+
+- git remote -v (you will see other repository)
+- git remote remove origin
+- git remote -v (you should see nothing)
+- git remote add origin <URL>
 
 # Week 1 Lab : Git Command Checklist
 
 Do these **in order**. Check each box as you complete it. Ask your trainer if a step fails.
 
-# Part A : First commit 
+# Part A : First commit
 
 - `git init` : turn the folder containing `greeting.js` into a Git repository.
 - `git status` : read the output. What does it say about `greeting.js`?
@@ -18,14 +19,14 @@ Do these **in order**. Check each box as you complete it. Ask your trainer if a 
 - `git commit -m "initial commit: add greeting.js"`
 - `git status` : confirm it says "nothing to commit, working tree clean".
 
-# Part B : Track changes 
+# Part B : Track changes
 
 - Open `greeting.js` and add a second `console.log()` line with your name.
 - `git status` : notice the file is listed as "modified".
 - `git add greeting.js`
 - `git commit -m "add personalized greeting"`
 
-# Part C : Connect to GitHub 
+# Part C : Connect to GitHub
 
 - On GitHub, create an empty repo and copy its HTTPS URL.
 - `git remote add origin <url>`
@@ -36,14 +37,14 @@ Do these **in order**. Check each box as you complete it. Ask your trainer if a 
 # Part D : Practice pull
 
 - On GitHub's website, edit `greeting.js` directly (add a comment) and commit the
-      change there.
+  change there.
 - Back in your terminal: `git pull`
 - Confirm your local file now has the change you made on GitHub.
 
 # Part E : Make a mistake, then fix it with reset
 
 - Add a line to `greeting.js` that intentionally breaks the code, e.g. `console.log(`
-      with no closing parenthesis.
+  with no closing parenthesis.
 - `git add greeting.js && git commit -m "oops: broken syntax"`
 - Run `node greeting.js` : confirm it errors out.
 - `git log --oneline` : copy the commit hash from **before** the broken commit.
@@ -51,18 +52,17 @@ Do these **in order**. Check each box as you complete it. Ask your trainer if a 
 - Run `node greeting.js` again : confirm it works.
 - `git log --oneline` : confirm the broken commit is gone.
 
-
 # Part F : Simulate teamwork (15 min, pair up if possible)
 
-- Add one more feature to `greeting.js` (e.g. a function `sayGoodbye()` that logs a
-      farewell message and call it).
+- Add one more feature to `greeting.js` (e.g. a function `a z` that logs a
+  farewell message and call it).
 - `git add . && git commit -m "add sayGoodbye function"`
 - `git push`
 - Swap screens with a classmate (or re-clone your own repo into a new folder) and run
-      `git clone <url>` to prove the repo is fully reproducible from GitHub.
+  `git clone <url>` to prove the repo is fully reproducible from GitHub.
 
 # Wrap-up (5 min)
 
 - `git log --oneline` : you should see **4+ commits**.
 - Confirm the repo on GitHub matches your local `main` branch (`git status` should say
-      "up to date with origin/main").
+  "up to date with origin/main").
